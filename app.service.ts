@@ -17,14 +17,13 @@ export class AppService {
       return this.tracks;
     }
   
-    async getTrackById(id:string){
-      for (let i=0; i<this.tracks.length; i++){
-        if (this.tracks[i].id == parseInt(id)){
-             return this.tracks[i];
+    async getTrackById(id: string) {
+      for (let i = 0; i < this.tracks.length; i++) {
+        if (this.tracks[i].id === parseInt(id)) {
+          return this.tracks[i];
         }
-        else
-        return null;
       }
+      return null;
     }
 
   
@@ -40,16 +39,16 @@ export class AppService {
       return "Se creo el track con exito";
     }
   
-    async updateTrackById(id: number, body: any){
-      for (let i = 0; i < this.tracks.length; i++){
-       if (this.tracks[i].id === id){
-        this.tracks[i].title = body.title;
-        this.tracks[i].artist = body.artist;
-        return "se actualizo el track con exito";
+    async updateTrackById(id: number, body: any) {
+      for (let i = 0; i < this.tracks.length; i++) {
+        if (this.tracks[i].id === id) {
+          this.tracks[i].title = body.title;
+          this.tracks[i].artist = body.artist;
+          return "Se actualizó el track con éxito";
+        }
       }
-        return "no se actualizo el track correctamente"
-    } 
-  }
+      return "No se encontró el track para actualizar";
+    }
   
     async deleteTrack(id: number){
       for (let i = 0; i<this.tracks.length; i++){ 

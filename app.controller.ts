@@ -25,7 +25,7 @@ export class AppController {
     return this.appService.updateTrackById(+id, body);
   }
 
-  @Delete('eliminar')
+  @Delete("eliminar/id")
   deleteTrack(@Param('id') id: string) {
     return this.appService.deleteTrack(+id);
   }
